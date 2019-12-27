@@ -14,7 +14,9 @@
 <body>
     <div id="header">
         <ul>
-            <li><a href="huy1.html" target="#"><div id="checkout">Home</div></a></li>
+            <li><a href="huy1.html" target="#">
+                    <div id="checkout">Home</div>
+                </a></li>
             <li><a href="">BRANDS</a></li>
             <li><a href="">CONTACT</a></li>
         </ul>
@@ -66,7 +68,8 @@
                     onApprove: function (data, actions) {
                         return actions.order.capture().then(function (details) {
                             // Show a success message to the buyer
-                            alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                            alert('Giao dịch thành công, chúc ' + details.payer.name.given_name + ' ăn ngon !');
+                            window.open("https://huythanthanh.github.io/project/");
                         });
                     }
 
