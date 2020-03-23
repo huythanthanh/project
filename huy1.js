@@ -239,7 +239,7 @@ $(document).ready(function () {
                 productName: productName,
                 productImage: productImage,
                 id: e.target.attributes[1].value,
-                price: 39
+                price: 20
             }
         )
 

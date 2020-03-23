@@ -23,7 +23,7 @@ for (let i = 0; i < listItem.length; i++) {
             <div class="product-details">
                 <div class="product-title">${listItem[i].productName}</div>
             </div>
-            <div class="product-price">39</div>
+            <div class="product-price">20</div>
             <div class="product-quantity">
                 <input type="number" value="1" min="1">
             </div>
@@ -32,7 +32,7 @@ for (let i = 0; i < listItem.length; i++) {
                     Remove
                 </button>
             </div>
-            <div class="product-line-price">39</div>
+            <div class="product-line-price">20</div>
         </div>
             
         `
@@ -49,28 +49,28 @@ if (beginTotal) {
                 </div>
                 <div class="totals-item">
                     <label>Tax (5%)</label>
-                    <div class="totals-value" id="cart-tax">3.60</div>
+                    <div class="totals-value" id="cart-tax">1.00</div>
                 </div>
                 <div class="totals-item">
                     <label>Shipping</label>
-                    <div class="totals-value" id="cart-shipping">15.00</div>
+                    <div class="totals-value" id="cart-shipping"> FREE</div>
                 </div>
                 <div class="totals-item totals-item-total">
                     <label>Grand Total</label>
-                    <div class="totals-value" id="cart-total">${(beginTotal + beginTotal * 0.05 + 15.00).toFixed(2)}</div>
+                    <div class="totals-value" id="cart-total">${(beginTotal + beginTotal * 0.05 + 0.00).toFixed(2)}</div>
                 </div>
         `
     containerTotal[0].insertAdjacentHTML("beforeend", HTMLTotal)
-    localStorage.setItem("total", (beginTotal + beginTotal * 0.05 + 15.00).toFixed(2))
+    localStorage.setItem("total", (beginTotal + beginTotal * 0.05 + 0.00).toFixed(2))
 }
 
-console.log((beginTotal * 0.05 + 15.00))
+console.log((beginTotal * 0.05 + 0.00))
 
 
 
 /* Set rates + misc */
 var taxRate = 0.05;
-var shippingRate = 15.00;
+var shippingRate = 0.00;
 var fadeTime = 300;
 
 
