@@ -12,7 +12,7 @@ body {
 }
 #header{
 	height:92px; 
-	background:orange url("http://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/header-icons.png") 1448px -2px no-repeat;
+	background:rgb(43, 43, 43) url("http://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/header-icons.png") 1448px -2px no-repeat;
 	border-bottom:1px solid #eee;
 }
 #header ul{padding:33px 0 0 45px;}
@@ -23,7 +23,7 @@ body {
 }
 #header li a{
 	font-weight:700;
-	color:#333;
+	color:whitesmoke;
 	font-size:14px;	
 	text-decoration:none;
 	text-transform:uppercase;
