@@ -1,13 +1,45 @@
-const pass_field = document.querySelector(".pass-key");
 const showBtn = document.querySelector(".show");
-showBtn.addEventListener("click", function() {
-  if (pass_field.type === "password") {
-    pass_field.type = "text";
-    showBtn.textContent = "HIDE";
-    showBtn.style.color = "#3498db";
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    document.getElementById("wrapper").style.display = "block";
+    document.getElementById("login_div").style.display = "none";
+
+    //var user = firebase.auth().currentUser;
+    //if (user != null){
+      //var email_id = user.mail;
+    //}  (Dòng này để lưu thông tin nhé)
+
   } else {
-    pass_field.type = "password";
-    showBtn.textContent = "SHOW";
-    showBtn.style.color = "#222";
+    document.getElementById("wrapper").style.display = "none";
+    document.getElementById("login_div").style.display = "block";
   }
 });
+
+  
+
+function login(){
+
+  var userEmail = document.getElementById("email_field").value;
+  var userPass = document.getElementById("password_field").value;
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    
+    window.alert("Lỗi: " + errorMessage);
+
+  });
+  
+
+}
+
+function logout(){
+
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+  }).catch(function(error) {
+    // An error happened.
+  });
+
+}
